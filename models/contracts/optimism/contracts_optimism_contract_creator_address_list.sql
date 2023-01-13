@@ -383,6 +383,7 @@ FROM (
       ,('0xc82c018dB54B894853cACb878D0F3e481E8C6b96', 'Via Protocol')
       ,('0x4401A1667dAFb63Cff06218A69cE11537de9A101', 'Clique')
       ,('0xF3808680917524CD1346b12e4845830076eB7001', 'Teahouse')
+      ,('0x4dc45eAc9eE25Af88958c94461fd46175C47744a', 'Geoweb')
 
   ) as temp_table (creator_address, contract_project)
 
