@@ -73,4 +73,5 @@ from (
     ,('powerbomb','Powerbomb Finance')
     ,('lemma_finance','Lemma Finance')
     ,('lemma','Lemma Finance')
+    ,('clipper_op_distribution','Clipper')
     ) as temp_table (dune_name, mapped_name)

@@ -399,6 +399,7 @@ FROM (
       ,('0x86b86c24c7b1f404ada8b4000acbe04158e096bd', 'Defiedge')
       ,('0xf708929CCfDed4142420592caAef42bD41C8a367', 'Champion Finance')
       ,('0x221a8Da83f675f1Fd97105a5B2B3bb65916a5101', 'Rabbithole')
+      ,('0xAC789308a29783f507f1f3baACBd43326C5767f4', 'Gamma')
   ) as temp_table (creator_address, contract_project)
 
 ) f
