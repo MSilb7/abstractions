@@ -1,6 +1,6 @@
 {{ config(
         alias ='mints',
-        post_hook='{{ expose_spells(\'["ethereum","solana"]\',
+        post_hook='{{ expose_spells(\'["ethereum","solana","bnb"]\',
                     "sector",
                     "nft",
                     \'["soispoke","umer_h_adil","hildobby","0xRob"]\') }}')
@@ -15,6 +15,7 @@
 ,ref('foundation_ethereum_mints')
 ,ref('blur_ethereum_mints')
 ,ref('zora_ethereum_mints')
+,ref('nftb_bnb_mints')
 ] %}
 
 WITH project_mints as (

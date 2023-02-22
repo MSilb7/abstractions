@@ -1,20 +1,12 @@
 {{ config(
         alias ='trades',
-        post_hook='{{ expose_spells(\'["ethereum", "bnb", "avalanche_c", "gnosis", "optimism", "arbitrum"]\',
+        post_hook='{{ expose_spells(\'["ethereum", "bnb", "avalanche_c", "gnosis", "optimism", "arbitrum", "fantom", "polygon"]\',
                                 "sector",
                                 "dex",
                                 \'["jeff-dude", "hosuke", "0xRob", "pandajackson42", "Henrystats", "scoffie", "zhongyiio", "justabi", "umer_h_adil", "mtitus6", "dbustos20", "tian7", "bh2smith"]\') }}'
         )
 }}
 
-/*
-list of models using old generic test, due to multiple versions in one model:
-    - curvefi_trades
-    - airswap_ethereum_trades
-    - dodo_ethereum_trades
-    - bancor_ethereum_trades
-    - mstable_ethereum_trades
-*/
 
 {% set dex_trade_models = [
  ref('uniswap_trades')
@@ -29,7 +21,7 @@ list of models using old generic test, due to multiple versions in one model:
 ,ref('defiswap_ethereum_trades')
 ,ref('dfx_ethereum_trades')
 ,ref('pancakeswap_trades')
-,ref('dodo_ethereum_trades')
+,ref('dodo_trades')
 ,ref('velodrome_optimism_trades')
 ,ref('woofi_trades')
 ,ref('bancor_ethereum_trades')
@@ -45,6 +37,20 @@ list of models using old generic test, due to multiple versions in one model:
 ,ref('wombat_bnb_trades')
 ,ref('iziswap_bnb_trades')
 ,ref('babyswap_bnb_trades')
+,ref('apeswap_trades')
+,ref('ellipsis_finance_trades')
+,ref('spartacus_exchange_fantom_trades')
+,ref('spookyswap_fantom_trades')
+,ref('beethoven_x_trades')
+,ref('rubicon_trades')
+,ref('synthetix_spot_trades')
+,ref('zipswap_trades')
+,ref('equalizer_exchange_fantom_trades')
+,ref('wigoswap_fantom_trades')
+,ref('arbswap_trades')
+,ref('balancer_trades')
+,ref('spiritswap_fantom_trades')
+,ref('quickswap_trades')
 ] %}
 
 
@@ -62,8 +68,8 @@ FROM (
         token_pair,
         token_bought_amount,
         token_sold_amount,
-        CAST(token_bought_amount_raw AS DECIMAL(38,0)) AS token_bought_amount_raw,
-        CAST(token_sold_amount_raw AS DECIMAL(38,0)) AS token_sold_amount_raw,
+        token_bought_amount_raw,
+        token_sold_amount_raw,
         amount_usd,
         token_bought_address,
         token_sold_address,

@@ -1,6 +1,6 @@
 {{ config(
         alias ='fees',
-        post_hook='{{ expose_spells(\'["ethereum","solana"]\',
+        post_hook='{{ expose_spells(\'["ethereum","solana","bnb","optimism","arbitrum"]\',
                                     "sector",
                                     "nft",
                                     \'["soispoke","0xRob"]\') }}')
@@ -19,6 +19,12 @@
 ,ref('superrare_ethereum_fees')
 ,ref('x2y2_ethereum_fees')
 ,ref('zora_ethereum_fees')
+,ref('pancakeswap_bnb_nft_fees')
+,ref('quix_optimism_fees')
+,ref('nftrade_bnb_fees')
+,ref('zonic_optimism_fees')
+,ref('nftb_bnb_fees')
+,ref('tofu_fees')
 ] %}
 
 

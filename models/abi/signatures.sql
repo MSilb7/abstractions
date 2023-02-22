@@ -5,22 +5,26 @@
         file_format = 'delta',
         incremental_strategy = 'merge',
         unique_key = ['created_at', 'unique_signature_id'],
-        post_hook='{{ expose_spells(\'["ethereum","bnb","avalanche_c","optimism","arbitrum","gnosis","polygon"]\',
+        post_hook='{{ expose_spells(\'["ethereum","bnb","avalanche_c","optimism","arbitrum","gnosis","polygon","fantom"]\',
                         "sector",
                         "abi",
                         \'["ilemi"]\') }}'
         )
 }}
 
-{% set chains = ['ethereum', 'optimism', 'arbitrum', 'avalanche_c', 'polygon', 'bnb', 'gnosis'] %}
+{% set chains = ['ethereum', 'optimism', 'arbitrum', 'avalanche_c', 'polygon', 'bnb', 'gnosis', 'fantom'] %}
 
 WITH
     signatures as (
         {% for chain in chains %}
 
             SELECT
-                *
-                , concat(id, signature, type) as unique_signature_id
+                abi,
+                created_at,
+                id,
+                signature,
+                type,
+                concat(id, signature, type) as unique_signature_id
             FROM {{ source(chain, 'signatures') }}
             
             {% if is_incremental() %}
