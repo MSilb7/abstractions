@@ -419,6 +419,8 @@ FROM (
       ,('0x6453bD91C3B06DCC24F588FFfa384b0EEB0178B3', 'Beefy Finance')
       ,('0xd8693368d37b502ed54c315e38efde7eb3dcdb5c', 'FunDex')
       ,('0x4e59b44847b379578588920ca78fbf26c0b4956c', 'LlamaPay')
+      ,('0xe61bdef3fff4c3cf7a07996dcb8802b5c85b665a', 'Exactly')
+      ,('0xd61fa937b8f237901d354f48f6b14995fe468bf2', 'Pixel Pooly')
 
   ) as temp_table (creator_address, contract_project)
 
