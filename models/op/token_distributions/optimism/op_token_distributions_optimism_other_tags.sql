@@ -38,7 +38,6 @@ FROM (values
             ,('0xc5785b0ce1095213465a4a4f28c19269cb4b35ec','Lyra Unknown')
             ,('0x9fa23d27bc93533cd29e6038275611c829813147','Aelin user')
             ,('0x897a7f6af47881c62d7ca7e3dc5bd8a1341ad8ae', 'xToken LP')
-            ,('0x68f5c0a2de713a54991e01858fd27a3832401849', 'xToken LP ')
             ,('0xcc98cfdc5f5480d8dd0a0d0a7f80506eb30d5159', 'xToken LP')
             ,('0x574a21fe5ea9666dbca804c9d69d8caf21d5322b', 'Rubicon LP')
             ,('0x1111111254760f7ab3f16433eea9304126dcd199', '1inch Swap')
