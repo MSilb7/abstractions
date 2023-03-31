@@ -15,7 +15,8 @@ select
   ,contract_name
 from 
     (values 
-    ('0xc30141B657f4216252dc59Af2e7CdB9D8792e1B0', 'Socket', 'Socket Registry')
+
+     ('0xc30141B657f4216252dc59Af2e7CdB9D8792e1B0', 'Socket', 'Socket Registry')
     ,('0x81b30ff521D1fEB67EDE32db726D95714eb00637', 'Optimistic Explorer', 'OptimisticExplorerNFT')
     ,('0x998EF16Ea4111094EB5eE72fC2c6f4e6E8647666', 'Quix', 'Seaport')
     ,('0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77', 'AttestationStation','AttestationStation')
@@ -27,4 +28,7 @@ from
     ,('0x86Bb63148d17d445Ed5398ef26Aa05Bf76dD5b59', 'Layer Zero', 'TheAptosBridge')
     ,('0x00000000000076a84fef008cdabe6409d2fe638b', 'DelegateCash', 'delegationRegistry')
     ,('0x82e0b8cdd80af5930c4452c684e71c861148ec8a', 'Metamask Wallet', 'MetamaskBridgeRouter')
+    --Non-Contract Labels
+    ,('0x80C67432656d59144cEFf962E8fAF8926599bCF8', 'Orbiter Finance', 'Bridge')
+
     ) as temp_table(contract_address, contract_project, contract_name)
