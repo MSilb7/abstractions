@@ -50,9 +50,10 @@ FROM (values
     ,('0x649c2DFCA22a41D30F0ddEFEA53C4D5f4797051a', 'Clique', 'Team Multisig')
     ,('0xCF9560305B23630f402965126D909Bf9786F1553', 'Rubicon', 'Multisig')
     ,('0x85cbb0E8262815b4866b166C02f7eF876A49D8f6', 'Biconomy', 'Biconomy - Binance Depoist')
-    ,('0xeeab81526c9addb75ffffde0cd3f6f018cc39ac2', 'Synthetix','Multisig - Distributor')
     ,('0x8314125c8b68af2afd0d151eb4a551e88128a2ae', 'Thales', 'Contract Deployer')
     ,('0x5033823f27c5f977707b58f0351adcd732c955dd', 'Lido',     'Intermediate Wallet')
+    ,('0x450F82319f940936F1f4F253B468c3e6E566Cdd5', 'Synapse',  'Intermediate Wallet')
+    ,('0xB8313Eaf73AED8fEa1D9930dF199B3c1Bdb67b47', 'Paraswap',  'Intermediate Wallet')
 
     --quix - should come from CB
     ,('0x5Ad4A019F77e82940f6Dd15A5215362AF061A742','Quix','Distributor')
