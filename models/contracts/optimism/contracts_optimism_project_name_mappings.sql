@@ -10,18 +10,18 @@
 }}
 
 select 
-  dune_name
-  ,mapped_name
+  cast(dune_name as varchar(250)) AS dune_name
+  ,cast(mapped_name as varchar(250)) AS mapped_name
 from (
     values
-    ('lyra_v1',	'Lyra')
-    ,('Lyra V1', 'Lyra')
+    ('lyra_v1',	'Lyra Finance')
+    ,('Lyra V1', 'Lyra Finance')
     ,('aave_v3', 'Aave')
     ,('perp_v2', 'Perpetual Protocol')
     ,('synthetix_futures', 'Kwenta')
-    ,('zeroex', '0x')
-    ,('uniswap_v3', 'Uniswap V3')
-    ,('Uniswap V3', 'Uniswap V3')
+    ,('zeroex', 'Zeroex (0x)' )
+    ,('uniswap_v3', 'Uniswap')
+    ,('Uniswap V3', 'Uniswap')
     ,('oneinch', '1inch')
     ,('pika_perp_v2', 'Pika Protocol')
     ,('quixotic_v1', 'Quix')
@@ -41,8 +41,7 @@ from (
     ,('balancer_v2', 'Beethoven X')
     ,('stargate', 'Stargate Finance')
     ,('quixotic_v5', 'Quix')
-    ,('lyra_avalon', 'Lyra')
-    ,('Lyra', 'Avalon Lyra')
+    ,('lyra_avalon', 'Lyra Finance')
     ,('Unlock', 'Unlock Protocol')
     ,('Xy Finance', 'XY Finance')
     ,('Qidao', 'QiDao')
@@ -68,9 +67,24 @@ from (
     ,('2pi_network','2Pi Network')
     ,('twopi_network','2Pi Network')
     ,('acryptos', 'AcryptoS')
-    ,('woofi', 'WooFi')
+    ,('woofi', 'Woo Network')
     ,('powerbomb_finance','Powerbomb Finance')
     ,('powerbomb','Powerbomb Finance')
     ,('lemma_finance','Lemma Finance')
     ,('lemma','Lemma Finance')
+    ,('arrakis','Arrakis Finance')
+    ,('arrakis_finance','Arrakis Finance')
+    ,('collab_land_dao_pass', 'Collab Land')
+    ,('Llama', 'Llamapay')
+    ,('Perpetualprotocol','Perpetual Protocol')
+    ,('perp_hottub','Perpetual Protocol')
+    ,('Avalon Lyra', 'Lyra Finance')
+    ,('avalon_lyra', 'Lyra Finance')
+    ,('lyra', 'Lyra Finance')
+    ,('Collab Land', 'Collab.Land')
+    ,('collab_land', 'Collab.Land')
+    ,('Biconomy - Hyphen', 'Biconomy')
+    ,('angle', 'Angle Protocol')
+    ,('overnight', 'Overnight+')
+
     ) as temp_table (dune_name, mapped_name)
