@@ -36,5 +36,6 @@ from
     --Non-Contract Labels
     ,('0x80C67432656d59144cEFf962E8fAF8926599bCF8', 'Orbiter Finance', 'Bridge')
     ,('0x79946eac000c85c83b6ba3adfa9ed7f4e2314e84', 'QuestN Protocol', 'QuestN Protocol')
+    ,('0xf332761c673b59B21fF6dfa8adA44d78c12dEF09', 'OKX', 'OKX DEX')
     
     ) as temp_table(contract_address, contract_project, contract_name)

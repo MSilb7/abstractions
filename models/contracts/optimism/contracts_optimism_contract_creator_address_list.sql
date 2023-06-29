@@ -534,6 +534,7 @@ WITH curated_list AS (
       ,('0x9c6373de60c2d3297b18a8f964618ac46e011b58', 'OP Citizens House')
       ,('0x79946eac000c85c83b6ba3adfa9ed7f4e2314e84', 'QuestN Protocol')
       ,('0x68108902de3a5031197a6eb3b74b3b033e8e8e4d', 'Gnosis Safe')
+      ,('0xc82Ea2afE1Fd1D61C4A12f5CeB3D7000f564F5C6', 'OKX')
 
   ) as temp_table (creator_address, contract_project)
 )
