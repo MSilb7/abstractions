@@ -34,7 +34,6 @@ FROM (values
     ,('0x5b77873C10BB116d87E1C11A36a6491c80D33784', 'LiFi','Intermediate')
     ,('0xAd95A5fE898679B927C266eB2eDfAbC7fe268C27', 'QiDao','Intermediate')
     ,('0x80ab3817C0026D31e5ECaC7675450f510f016EfB', 'dForce','Intermediate')
-    ,('0x79946eac000c85c83b6ba3adfa9ed7f4e2314e84', 'OptiChads','Intermediate')
     ,('0x18b7ee080db33c314c74973fcfbc3fd257416162', 'Beefy Finance','Intermediate')
     ,('0x19B6584cA17D3B50E298327dA83Ff36C6EFb71E5', 'dHedge','Intermediate')
     ,('0x253956aedc059947e700071bc6d74bd8e34fe2ab', 'dHedge','Intermediate')

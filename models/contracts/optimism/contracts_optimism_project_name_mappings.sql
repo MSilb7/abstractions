@@ -101,5 +101,6 @@ from (
     ,('kyber', 'Kyberswap')
     ,('synthetix_v3', 'Synthetix')
     ,('velodrome_v2', 'Velodrome')
+    ,('attestationstation', 'OP AttestationStation')
 
     ) as temp_table (dune_name, mapped_name)

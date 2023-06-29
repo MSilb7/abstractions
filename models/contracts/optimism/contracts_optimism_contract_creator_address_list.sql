@@ -530,6 +530,10 @@ WITH curated_list AS (
       ,('0xC253Af7B80F3DD3d469bf4b94AA9e3df59e71e43', 'Inverse Finance')
       ,('0x6Bd10054c59Febf0CF7c0f5359D036A997E93810', 'BlueNorva')
       ,('0x6fF5723435b7dfC2371B57Fb5cB4c373E5995C78', 'Bored Town')
+      ,('0x956a5152D0f498dBA0c5966577bb44262F8F7078', 'OP AttestationStation')
+      ,('0x9c6373de60c2d3297b18a8f964618ac46e011b58', 'OP Citizens House')
+      ,('0x79946eac000c85c83b6ba3adfa9ed7f4e2314e84', 'QuestN Protocol')
+      ,('0x68108902de3a5031197a6eb3b74b3b033e8e8e4d', 'Gnosis Safe')
 
   ) as temp_table (creator_address, contract_project)
 )
