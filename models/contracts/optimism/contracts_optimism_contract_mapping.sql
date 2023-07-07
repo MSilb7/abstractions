@@ -158,6 +158,23 @@ SELECT *
     left join {{ref('contracts_optimism_deterministic_contract_creators')}} as nd 
       ON nd.creator_address = t.creator_address
 
+    left join {{source('optimism','contracts')}} as decoded 
+      ON decoded.address = ct.address
+    
+    left join {{ ref('contracts_optimism_contract_creator_address_list') }} cal 
+      ON cal.creator_address = t.creator_address
+      AND cal.contract_project != t.contract_project
+    left join  {{ ref('contracts_optimism_project_name_mappings') }} pnm_a
+      ON pnm_a.dune_name = cal.contract_project
+    left join  {{ ref('contracts_optimism_project_name_mappings') }} pnm_b
+      ON pnm_b.dune_name = t.contract_project
+    left join  {{ ref('contracts_optimism_contract_overrides') }} ovr_a
+      ON ovr_a.contract_address = t.contract_address
+      AND ovr_a.contract_project != t.contract_project
+    left join  {{ ref('contracts_optimism_contract_overrides') }} ovr_b
+      ON ovr_b.contract_address = t.contract_address
+      AND ovr_b.contract_name != t.contract_name
+
     -- Don't pull contracts that are in the incremental group (prevent dupes)
     WHERE t.contract_address NOT IN (
       SELECT address FROM {{ source('optimism', 'creation_traces') }} WHERE ct.block_time >= date_trunc('day', now() - interval '7' day)
@@ -165,10 +182,14 @@ SELECT *
     -- re-run if :
     AND (nd.creator_address IS NOT NULL --creator is a known nondeterministic creator (i.e. improperly mapped before)
         OR (sd.contract_address is not NULL AND t.is_self_destruct = false) --was newly selfdestructed
-        OR () --has a new contract name
-        OR () -- has a new token symbol
-        OR () -- has a new contract project name
+        OR (decoded.contract_name != t.contract_name OR (t.contract_name IS NULL AND decoded.contract_name IS NOT NULL) ) --has a new contract name or is newly decoded
+        OR (t.contract_address IN (SELECT e.contract_address FROM {{ ref('tokens_optimism_erc20') }} e WHERE e.symbol != t.token_symbol)) -- has a new token symbol (erc20)
+        OR (t.contract_address IN (SELECT e.contract_address FROM {{ ref('tokens_optimism_nft') }} e WHERE e.symbol != t.token_symbol)) -- has a new token symbol (nft)
+        OR (t.contract_project != COALESCE(pnm_b.mapped_name, pnm_a.mapped_name, t.contract_project) ) -- has a new contract project name
+        OR (t.contract_project IS NULL AND cal.contract_project IS NOT NULL) --newly mapped
+        OR (ovr_a.contract_project IS NOT NULL OR ovr_b.contract_project IS NOT NULL) --newly overriden
         ) --only pull contracts we want to rerun
+
 
       {% endif %} -- incremental filter
   ) as x
