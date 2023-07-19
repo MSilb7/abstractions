@@ -110,6 +110,9 @@ WITH all_labels AS (
                     and tf.to IN ('0x4f3a120e72c76c22ae802d129f599bfdbc31cb81'
                             ,'0x51d3a2f94e60cbecdce05ab41b61d7ce5240b8ff')
                     )
+            AND tf.`evt_tx_hash` NOT IN (
+                '0xe13b0f5ff39739d9e86be3cd33149be0ed7a30dad5f45611db7afa040fcef840' --airdrop 1 clawback
+            )
             {% if is_incremental() %} 
             and tf.evt_block_time >= date_trunc('day', now() - interval '1 week')
             {% else %}
