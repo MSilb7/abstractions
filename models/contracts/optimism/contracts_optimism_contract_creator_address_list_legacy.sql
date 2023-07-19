@@ -562,6 +562,8 @@ WITH curated_list AS (
       ,('0xae0c5140744bfc6bc33ce73298f10f7b538f02dd', 'Eco')
       ,('0xb1bEF51ebCA01EB12001a639bDBbFF6eEcA12B9F', 'Sablier')
       ,('0x3c5e6b4292ed35e8973400bef77177a9e84e8e6e', 'Layerr')
+      ,('0x0989cd2871b36d638140354731301a32d2409c3a', 'Highlight.xyz')
+      ,('0x56d7303fB0d0781c2FbEf962d7F9461BF416916F', 'mint.fun')
       
   ) as temp_table (creator_address, contract_project)
 )
