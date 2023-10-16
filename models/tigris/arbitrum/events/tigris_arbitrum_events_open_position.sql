@@ -29,7 +29,9 @@ pairs as (
 {% set open_position_v2_evt_tables = [
     'Trading_evt_PositionOpened',
     'TradingV2_evt_PositionOpened',
-    'TradingV3_evt_PositionOpened'
+    'TradingV3_evt_PositionOpened',
+    'TradingV4_evt_PositionOpened',
+    'TradingV5_evt_PositionOpened'
 ] %} 
 
 open_position_v1 AS (
@@ -65,7 +67,7 @@ open_position_v1 AS (
             ON CAST(json_extract_scalar(_tradeInfo, '$.asset') as double) = CAST(ta.asset_id as double)
             AND ta.protocol_version = '1'
         {% if is_incremental() %}
-        WHERE t.evt_block_time >= date_trunc('day', now() - interval '7' day) 
+        WHERE 1 = 0 
         {% endif %}
         {% if not loop.last %}
         UNION ALL

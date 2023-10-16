@@ -1,7 +1,11 @@
 {{ 
     config(
-        alias = alias('celo', legacy_model=True), 
-        tags = ['legacy']
+	    tags=['legacy'],
+        schema = 'transfers_celo',
+        alias = alias('celo', legacy_model=True)
     )
 }}
-SELECT 1
+
+-- DUMMY TABLE, WILL BE REMOVED SOON
+select 
+  1
