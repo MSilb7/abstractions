@@ -976,6 +976,7 @@ WITH curated_list AS (
 
       ,(0x87e7D106FE75fcD26d9aC311EF29ac1398DD4441, 'Coinbase')
       ,(0xFFFFfFfFA2eC6F66a22017a0Deb0191e5F8cBc35, '0xStation')
+      ,(0xEA29cF6fb2c51186CD6AAC01750A5F2eA7480dF0, 'Anja')
 
       --MEV - https://github.com/winnsterx/searcherbuilder.pics/blob/main/labels/searcher_addr_map.py
       ,(0x69E906c33722F61b854929cd2c6f3427dea9f090, 'Jump Trading')
