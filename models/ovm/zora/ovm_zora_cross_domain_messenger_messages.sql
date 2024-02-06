@@ -6,9 +6,9 @@
     file_format = 'delta',
     incremental_strategy = 'merge',
     unique_key = ['msg_type','l2_block_date', 'l2_tx_hash', 'evt_index','msg_index'],
-    post_hook='{{ expose_spells(\'["optimism"]\',
+    post_hook='{{ expose_spells(\'["zora"]\',
                                 "project",
-                                "ovm_optimism",
+                                "ovm_zora",
                                 \'["msilb7"]\') }}'
     )
 }}
@@ -20,7 +20,7 @@ SELECT 'withdraw' AS msg_type, 'SentMessage' AS event, sender,
     contract_address, target, messageNonce AS message_nonce_hash, evt_index, '2' AS version,
     DENSE_RANK() OVER (PARTITION BY evt_tx_hash ORDER BY evt_index ASC) AS msg_index
     
-    FROM {{ source ('ovm_optimism', 'L2CrossDomainMessenger_evt_SentMessage') }}
+    FROM {{ source ('ovm_zora', 'L2CrossDomainMessenger_evt_SentMessage') }}
     {% if is_incremental() %}
     WHERE evt_block_time >= (NOW() - interval '14' Day)
     {% endif %}
@@ -35,7 +35,7 @@ SELECT 'deposit' AS m_type, 'RelayedMessage' AS event, CAST(NULL as VARBINARY) a
     contract_address, CAST(NULL as VARBINARY) as target, bytearray_to_uint256(msgHash) AS message_nonce_hash, evt_index, '2' AS version,
     DENSE_RANK() OVER (PARTITION BY evt_tx_hash ORDER BY evt_index ASC) AS msg_index
 
-    FROM {{ source ('ovm_optimism', 'L2CrossDomainMessenger_evt_RelayedMessage') }}
+    FROM {{ source ('ovm_zora', 'L2CrossDomainMessenger_evt_RelayedMessage') }}
     {% if is_incremental() %}
     WHERE evt_block_time >= (NOW() - interval '14' Day)
     {% endif %}
