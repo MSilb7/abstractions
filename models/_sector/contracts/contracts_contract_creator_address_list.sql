@@ -1098,6 +1098,9 @@ WITH curated_list AS (
       ,(0xd1236a6A111879d9862f8374BA15344b6B233Fbd, 'MakerDAO')
       ,(0x0e63D6f414b40BaFCa676810ef1aBf05ECc8E459, 'PartyDAO')
 
+      ,(0x5F799f365Fa8A2B60ac0429C48B153cA5a6f0Cf8, 'GMX')
+      ,(0x4f0b5820B671f5cd855966c4ddB3A0Ca7dcd5bA0, 'Definitive')
+  
   ) as temp_table (creator_address, contract_project)
 )
 
